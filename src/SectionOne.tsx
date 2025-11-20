@@ -2,51 +2,59 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const SectionOne = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-5 px-4 sm:px-6 md:px-10 lg:px-16">
+    <section
+      className="relative flex items-center 
+        bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E]
+        justify-center overflow-hidden py-5 px-4 sm:px-6 md:px-10 lg:px-16"
+    >
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">
           <div className="text-center lg:text-left space-y-8">
-            <div className="inline-flex items-center gap-2 bg-white px-4 sm:px-5 py-2 rounded-full border border-pink-200 transition-all">
-              <Sparkles className="w-4 h-4 text-pink-600" />
-              <span className="text-sm sm:text-base font-medium text-gray-700 tracking-wide">
+            {/* Tag Badge */}
+            <div
+              className="inline-flex items-center gap-2 
+                bg-[#1F1F1F] px-4 sm:px-5 py-2 rounded-full 
+                border border-[#2A2A2A] shadow-lg shadow-black/20"
+            >
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span className="text-sm sm:text-base font-medium text-gray-300 tracking-wide">
                 Where Real Connections Happen
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-col items-start text-gray-800">
-              <span>Share Time.</span>
-              <span>Feel Heard.</span>
-              <span>Connect with People Who Care.</span>
+            {/* Heading */}
+            <h1
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl 
+                font-bold leading-tight text-white flex flex-col items-start"
+            >
+              Share moments, feel heard, and connect with people who care.
             </h1>
 
-            <div className="px-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-8">
-              {/* BIG BUTTON */}
+            {/* Buttons */}
+            <div className="flex flex-col items-start gap-3 mt-8">
+              {/* Primary Button (Neon Purple / Dark Mode) */}
               <button
-                className="px-8 py-4 md:px-12 md:py-5 rounded-full font-semibold text-xl 
-    flex items-center justify-center gap-2 
-    text-white bg-black 
-    active:scale-95 transition-all duration-300 hover:scale-105 
-    w-full sm:w-auto"
+                className="px-6 py-3 md:px-12 md:py-4 rounded-full font-semibold text-sm
+                flex items-center justify-center gap-2 text-white
+                bg-gradient-to-br from-[#2D0065] to-[#7A0CF8]
+                hover:from-[#39007D] hover:to-[#8E2BFF]
+                active:scale-95 transition-all duration-300 hover:scale-105
+                shadow-[0_0_15px_rgba(138,43,226,0.4)]"
               >
                 Connect Now
                 <ArrowRight className="w-6 h-6 transition-transform" />
               </button>
 
-              {/* SMALL BUTTON */}
-              <div className="flex flex-col items-start gap-3">
-                <span className="text-gray-900 text-base font-medium">
-                  Join Helon — tap below
-                </span>
-
-                <button
-                  className="px-6 py-3 rounded-full font-medium text-base
-    border-2 border-gray-900 text-gray-900 bg-white
-    active:scale-95 transition-all duration-300 hover:scale-105
-    w-fit"
-                >
-                  Get Started
-                </button>
-              </div>
+              {/* Secondary Button (Dark Mode) */}
+              <button
+                className="px-6 py-3 rounded-full font-medium text-sm
+                border-2 border-gray-700 text-gray-300 bg-[#111111]
+                active:scale-95 transition-all duration-300 hover:scale-105
+                hover:border-gray-500 hover:bg-[#1A1A1A]
+                shadow-sm shadow-black/40"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </div>
