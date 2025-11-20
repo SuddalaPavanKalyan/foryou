@@ -2,7 +2,8 @@ import { AlignLeft, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 import Logo from "./Logo";
-import SectionOne from "./SectionOne";
+import SectionOne from "./HeroSection";
+import ValuePropositions from "./ValuePropositions";
 
 const App: React.FC = () => {
   const [bar, setBar] = useState<boolean>(false);
@@ -10,10 +11,10 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-1 py-4 bg-white">
+      <header className="flex items-center justify-between px-1 py-4 bg-black text-white">
         <div className="flex items-center gap-3">
           <button
-            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition"
+            className="p-3 rounded-full hover:bg-white/5 active:scale-95 transition"
             onClick={toggle}
           >
             <AlignLeft size={26} />
@@ -29,7 +30,7 @@ const App: React.FC = () => {
             Log in
           </button>
 
-          <button className="bg-black text-white rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition">
+          <button className="bg-white text-black rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition">
             Get Started
           </button>
         </div>
@@ -79,6 +80,7 @@ const App: React.FC = () => {
       </div>
 
       <SectionOne />
+      <ValuePropositions />
     </div>
   );
 };

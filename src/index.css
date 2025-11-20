@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* Default (light mode) */
+:root {
+  --logo-primary: #0f172a; /* Slate-900 */
+  --logo-secondary: #06b6d4; /* Cyan-500 */
+}
+
+/* Dark mode */
+.dark {
+  --logo-primary: #e2e8f0; /* Slate-200 */
+  --logo-secondary: #22d3ee; /* Cyan-400 */
+}

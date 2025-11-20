@@ -2,11 +2,13 @@ import { motion, type Variants } from "framer-motion";
 
 type Props = {
   size?: number; // px
-  primary?: string;
-  secondary?: string;
   className?: string;
   ariaLabel?: string;
 };
+
+// Theme-aware colors using CSS variables
+const PRIMARY_VAR = "var(--logo-primary)";
+const SECONDARY_VAR = "var(--logo-secondary)";
 
 const svgContainer: Variants = {
   hidden: { rotate: -10, opacity: 0 },
@@ -37,8 +39,6 @@ const core: Variants = {
 
 export default function Logo({
   size = 64,
-  primary = "#0f172a",
-  secondary = "#06b6d4",
   className = "",
   ariaLabel = "Brand logo"
 }: Props) {
@@ -64,12 +64,14 @@ export default function Logo({
         aria-hidden="true"
       >
         <defs>
+          {/* Gradient that adapts via CSS variables */}
           <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
-            <stop offset="0%" stopColor={primary} stopOpacity="1" />
-            <stop offset="100%" stopColor={secondary} stopOpacity="1" />
+            <stop offset="0%" stopColor={PRIMARY_VAR} stopOpacity="1" />
+            <stop offset="100%" stopColor={SECONDARY_VAR} stopOpacity="1" />
           </linearGradient>
         </defs>
 
+        {/* Outer Ring */}
         <motion.circle
           cx="32"
           cy="32"
@@ -78,15 +80,15 @@ export default function Logo({
           stroke="url(#g1)"
           strokeWidth={strokeWidth}
           strokeLinecap="round"
-          strokeLinejoin="round"
           variants={ring}
           custom={1}
         />
 
+        {/* Inner Curve */}
         <motion.path
           d="M20 38c3-6 8-10 12-11s10 2 14 8"
           fill="none"
-          stroke={primary}
+          stroke={PRIMARY_VAR}
           strokeWidth={Math.max(2, Math.round(size / 28))}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -94,13 +96,13 @@ export default function Logo({
           custom={2}
         />
 
+        {/* Center Shape */}
         <motion.g variants={core} style={{ originX: "50%", originY: "50%" }}>
-          <circle cx="32" cy="24" r="7" fill={secondary} />
-
+          <circle cx="32" cy="24" r="7" fill={SECONDARY_VAR} />
           <path
             d="M28 44c1.5-2 4-4 8-4s6.5 2 8 4"
             fill="none"
-            stroke={secondary}
+            stroke={SECONDARY_VAR}
             strokeWidth={Math.max(1.5, Math.round(size / 36))}
             strokeLinecap="round"
           />

@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const SectionOne = () => {
+const HeroSection = () => {
   return (
     <section
       className="relative flex items-center 
@@ -9,8 +9,7 @@ const SectionOne = () => {
     >
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">
-          <div className="text-center lg:text-left space-y-8">
-            {/* Tag Badge */}
+          <div className="text-center lg:text-left space-y-10">
             <div
               className="inline-flex items-center gap-2 
                 bg-[#1F1F1F] px-4 sm:px-5 py-2 rounded-full 
@@ -22,7 +21,6 @@ const SectionOne = () => {
               </span>
             </div>
 
-            {/* Heading */}
             <h1
               className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl 
                 font-bold leading-tight text-white flex flex-col items-start text-left"
@@ -30,9 +28,7 @@ const SectionOne = () => {
               Meaningful conversations with people who genuinely listen.
             </h1>
 
-            {/* Buttons */}
             <div className="flex flex-col items-start gap-3 mt-8">
-              {/* Primary Button (Neon Purple / Dark Mode) */}
               <button
                 className="px-6 py-3 md:px-12 md:py-4 rounded-full font-semibold text-sm
                 flex items-center justify-center gap-2 text-white
@@ -45,7 +41,6 @@ const SectionOne = () => {
                 <ArrowRight className="w-6 h-6 transition-transform" />
               </button>
 
-              {/* Secondary Button (Dark Mode) */}
               <button
                 className="px-6 py-3 rounded-full font-medium text-sm
                 border-2 border-gray-700 text-gray-300 bg-[#111111]
@@ -63,4 +58,4 @@ const SectionOne = () => {
   );
 };
 
-export default SectionOne;
+export default HeroSection;
