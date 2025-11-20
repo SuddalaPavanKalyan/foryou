@@ -13,19 +13,33 @@ const SectionOne = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-col text-gray-800">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-col items-start text-gray-800">
               <span>Share Time.</span>
               <span>Feel Heard.</span>
               <span>Connect with People Who Care.</span>
             </h1>
 
-            <div className="px-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-8">
-              <button className="px-8 py-3 md:px-10 md:py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 text-white bg-black active:scale-95 transition-all duration-300hover:scale-105 w-full sm:w-auto">
+            <div className="px-10 flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start mt-8">
+              {/* BIG BUTTON */}
+              <button
+                className="px-10 py-5 md:px-12 md:py-5 rounded-full font-semibold text-xl 
+    flex items-center justify-center gap-2 
+    text-white bg-black 
+    active:scale-95 transition-all duration-300 hover:scale-105 
+    w-full sm:w-auto"
+              >
                 Connect Now
-                <ArrowRight className="w-5 h-5 transition-transform" />
+                <ArrowRight className="w-6 h-6 transition-transform" />
               </button>
 
-              <button className="px-8 py-3 md:px-10 md:py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 border-2 border-gray-900 text-gray-800 bg-white active:scale-95 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+              {/* SMALL BUTTON */}
+              <button
+                className="px-5 py-3 rounded-full font-medium text-base 
+    flex items-center justify-center gap-2 
+    border-2 border-gray-900 text-gray-900 bg-white 
+    active:scale-95 transition-all duration-300 hover:scale-105 
+    w-fit"
+              >
                 Become a Helon
               </button>
             </div>
