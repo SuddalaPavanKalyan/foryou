@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section
       className="relative flex items-center 
         bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E]
-        justify-center overflow-hidden py-5 px-4 sm:px-6 md:px-10 lg:px-16"
+        justify-center overflow-hidden py-10 px-4 sm:px-6 md:px-10 lg:px-16"
     >
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">

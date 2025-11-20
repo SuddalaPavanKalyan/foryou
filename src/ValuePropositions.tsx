@@ -45,8 +45,8 @@ const ValuePropositions = () => {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center py-5 px-6 md:px-12 lg:px-20 
-      bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E] text-white overflow-hidden"
+      className="relative flex items-center justify-center py-10 px-6 md:px-12 lg:px-20 
+       bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E] text-white overflow-hidden"
     >
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-4 items-center">
@@ -69,7 +69,7 @@ const ValuePropositions = () => {
             </h1>
           </div>
 
-          <div className="relative w-full max-w-md h-64 flex items-center justify-center">
+          <div className="relative w-full max-w-md h-64 flex items-center justify-center border rounded">
             <div
               key={card.index}
               className="absolute inset-0 flex items-center justify-center animate-fade-in"
