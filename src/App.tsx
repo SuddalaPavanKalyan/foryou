@@ -38,7 +38,7 @@ const App: React.FC = () => {
       >
         <header className="w-full flex items-center justify-between px-4 py-3">
           <div className="w-16 p-1 active:scale-95 transition" />
-          <div className="text-[14px] font-semibold uppercase tracking-wide px-5">
+          <div className="text-[14px] font-bold uppercase tracking-wide px-5">
             <p className="w-full px-5">Heleno</p>
           </div>
           <button className="p-1 active:scale-95 transition" onClick={toggle}>
@@ -64,7 +64,7 @@ const App: React.FC = () => {
         </main>
 
         <footer className="px-5 py-6 flex flex-col items-center gap-4">
-          <button className="w-full py-4 text-center bg-white text-black text-md rounded-full font-sm active:scale-95 transition">
+          <button className="w-full py-6 text-center bg-white text-black text-md rounded-full font-sm active:scale-95 transition">
             Get Started
           </button>
 
