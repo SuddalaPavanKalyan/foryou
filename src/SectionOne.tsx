@@ -19,10 +19,10 @@ const SectionOne = () => {
               <span>Connect with People Who Care.</span>
             </h1>
 
-            <div className="px-10 flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start mt-8">
+            <div className="px-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-8">
               {/* BIG BUTTON */}
               <button
-                className="px-10 py-5 md:px-12 md:py-5 rounded-full font-semibold text-xl 
+                className="px-8 py-4 md:px-12 md:py-5 rounded-full font-semibold text-xl 
     flex items-center justify-center gap-2 
     text-white bg-black 
     active:scale-95 transition-all duration-300 hover:scale-105 
@@ -33,15 +33,20 @@ const SectionOne = () => {
               </button>
 
               {/* SMALL BUTTON */}
-              <button
-                className="px-5 py-3 rounded-full font-medium text-base 
-    flex items-center justify-center gap-2 
-    border-2 border-gray-900 text-gray-900 bg-white 
-    active:scale-95 transition-all duration-300 hover:scale-105 
+              <div className="flex flex-col items-start gap-3">
+                <span className="text-gray-900 text-base font-medium">
+                  Join Helon — tap below
+                </span>
+
+                <button
+                  className="px-6 py-3 rounded-full font-medium text-base
+    border-2 border-gray-900 text-gray-900 bg-white
+    active:scale-95 transition-all duration-300 hover:scale-105
     w-fit"
-              >
-                Become a Helon
-              </button>
+                >
+                  Get Started
+                </button>
+              </div>
             </div>
           </div>
         </div>
