@@ -1,6 +1,7 @@
-import { AlignLeft, Heart, X } from "lucide-react";
+import { AlignLeft, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
+import Logo from "./Logo";
 
 const App: React.FC = () => {
   const [bar, setBar] = useState<boolean>(false);
@@ -18,11 +19,11 @@ const App: React.FC = () => {
           </button>
 
           <div className="font-bold text-xl tracking-wide uppercase">
-            <Heart />
+            <Logo />
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mr-3">
           <button className="text-lg font-medium hover:opacity-70 transition">
             Log in
           </button>
