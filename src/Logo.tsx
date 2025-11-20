@@ -37,13 +37,12 @@ const core: Variants = {
 
 export default function Logo({
   size = 64,
-  primary = "#000000",
-  secondary = "#000000",
+  primary = "#0f172a",
+  secondary = "#06b6d4",
   className = "",
   ariaLabel = "Brand logo"
 }: Props) {
   const strokeWidth = Math.max(2, Math.round(size / 24));
-  const ringRadius = 26;
 
   return (
     <motion.div
