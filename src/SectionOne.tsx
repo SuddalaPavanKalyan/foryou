@@ -24,10 +24,10 @@ const SectionOne = () => {
 
             {/* Heading */}
             <h1
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl 
-                font-bold leading-tight text-white flex flex-col items-start"
+              className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl 
+                font-bold leading-tight text-white flex flex-col items-start text-left"
             >
-              Share moments, feel heard, and connect with people who care.
+              Meaningful conversations with people who genuinely listen.
             </h1>
 
             {/* Buttons */}
