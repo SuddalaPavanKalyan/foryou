@@ -23,7 +23,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-md font-medium hover:opacity-70 transition">
+          <button className="text-lg font-medium hover:opacity-70 transition">
             Log in
           </button>
 
