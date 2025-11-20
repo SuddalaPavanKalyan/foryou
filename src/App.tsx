@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { AlignLeft, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 
@@ -8,24 +8,26 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-4 py-3 bg-white">
+      <header className="flex items-center justify-between px-5 py-4 bg-white">
         <div className="flex items-center gap-3">
           <button
-            className="p-2 rounded-full hover:bg-black/5 active:scale-95 transition"
+            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition"
             onClick={toggle}
           >
-            <Menu size={20} />
+            <AlignLeft size={26} />
           </button>
 
-          <div className="font-bold text-lg tracking-wide uppercase">H</div>
+          <div className="font-bold text-2xl tracking-wide uppercase">
+            Heleno2
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button className="text-sm font-medium hover:opacity-70 transition">
+        <div className="flex items-center gap-4">
+          <button className="text-lg font-medium hover:opacity-70 transition">
             Log in
           </button>
 
-          <button className="bg-black text-white rounded-full px-3 py-2 text-sm font-semibold active:scale-95 transition">
+          <button className="bg-black text-white rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition">
             Get Started
           </button>
         </div>
