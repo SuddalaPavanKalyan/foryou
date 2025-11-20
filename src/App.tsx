@@ -1,4 +1,4 @@
-import { AlignLeft, X } from "lucide-react";
+import { AlignLeft, Heart, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-5 py-4 bg-white">
+      <header className="flex items-center justify-between px-3 py-4 bg-white">
         <div className="flex items-center gap-3">
           <button
             className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition"
@@ -17,13 +17,13 @@ const App: React.FC = () => {
             <AlignLeft size={26} />
           </button>
 
-          <div className="font-bold text-2xl tracking-wide uppercase">
-            Heleno2
+          <div className="font-bold text-xl tracking-wide uppercase">
+            <Heart />
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-lg font-medium hover:opacity-70 transition">
+          <button className="text-xl font-medium hover:opacity-70 transition">
             Log in
           </button>
 
