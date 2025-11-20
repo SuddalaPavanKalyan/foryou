@@ -4,9 +4,10 @@ const HeroSection = () => {
   return (
     <section
       className="relative flex items-center 
-        bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E]
+        bg-black
         justify-center overflow-hidden py-10 px-4 sm:px-6 md:px-10 lg:px-16"
     >
+      {/* bg-gradient-to-br from-[#0A0A0A] via-[#0F0F1A] to-[#1A1A2E] */}
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">
           <div className="text-center lg:text-left space-y-10">

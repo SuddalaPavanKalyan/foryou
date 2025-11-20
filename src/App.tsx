@@ -1,8 +1,10 @@
 import { AlignLeft, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
-import Logo from "./Logo";
+import CTASection from "./CTASection";
+import Footer from "./Footer";
 import SectionOne from "./HeroSection";
+import Logo from "./Logo";
 import ValuePropositions from "./ValuePropositions";
 
 const App: React.FC = () => {
@@ -81,6 +83,8 @@ const App: React.FC = () => {
 
       <SectionOne />
       <ValuePropositions />
+      <CTASection />
+      <Footer />
     </div>
   );
 };
