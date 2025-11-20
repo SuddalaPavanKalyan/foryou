@@ -64,7 +64,7 @@ const App: React.FC = () => {
         </main>
 
         <footer className="px-5 py-6 flex flex-col items-center gap-4">
-          <button className="w-full py-6 text-center bg-white text-black text-md rounded-full font-sm active:scale-95 transition">
+          <button className="w-full py-5 text-center bg-white text-black text-lg rounded-full font-sm active:scale-95 transition">
             Get Started
           </button>
 
