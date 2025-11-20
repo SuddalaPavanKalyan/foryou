@@ -2,6 +2,7 @@ import { AlignLeft, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 import Logo from "./Logo";
+import SectionOne from "./SectionOne";
 
 const App: React.FC = () => {
   const [bar, setBar] = useState<boolean>(false);
@@ -76,6 +77,8 @@ const App: React.FC = () => {
           </div>
         </footer>
       </div>
+
+      <SectionOne />
     </div>
   );
 };
