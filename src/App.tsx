@@ -8,7 +8,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-3 py-4 bg-white">
+      <header className="flex items-center justify-between px-1 py-4 bg-white">
         <div className="flex items-center gap-3">
           <button
             className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition"
@@ -23,7 +23,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-xl font-medium hover:opacity-70 transition">
+          <button className="text-md font-medium hover:opacity-70 transition">
             Log in
           </button>
 
