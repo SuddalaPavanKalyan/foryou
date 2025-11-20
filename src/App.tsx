@@ -19,7 +19,7 @@ const App: React.FC = () => {
           </button>
 
           <div className="font-bold text-xl tracking-wide uppercase">
-            <Logo />
+            <Logo size={50} />
           </div>
         </div>
 
