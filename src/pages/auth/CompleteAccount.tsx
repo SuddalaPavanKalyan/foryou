@@ -6,7 +6,7 @@ const CompleteAccount = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen w-full bg-black text-white flex flex-col items-center px-4 sm:px-6 relative">
+    <div className="min-h-screen w-full bg-black text-white flex flex-col items-center px-10 relative">
       {/* Back Button */}
       <button className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/10 hover:bg-white/20 p-2 rounded-full">
         <ArrowLeft className="text-white" size={22} />
