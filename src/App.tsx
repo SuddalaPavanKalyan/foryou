@@ -26,6 +26,8 @@ const App: React.FC = () => {
           </Route>
           <Route path="trust-and-safety" element={<Safety />} />
         </Route>
+
+        <Route path="*" element={<div title="Not Found" />} />
       </Routes>
     </div>
   );

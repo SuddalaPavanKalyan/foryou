@@ -25,7 +25,7 @@ export default function HowItsGoingSection() {
         {/* STATS GRID */}
         <div className="grid md:grid-cols-4 gap-8 mb-24">
           {[
-            { end: 2500, label: "Active Lynkers" },
+            { end: 2500, label: "Active Helenos" },
             { end: 50000, label: "Connections Made" },
             { end: 4.9, label: "Average Rating" },
             { end: 95, suffix: "%", label: "User Satisfaction" }
@@ -72,7 +72,7 @@ export default function HowItsGoingSection() {
                 <div className="bg-gray-100 dark:bg-white/5 p-6 rounded-2xl transition-colors">
                   <p className="text-black dark:text-white mb-2">
                     "I was going through a tough breakup and didn’t want to
-                    burden my friends. My Lynker provided exactly what I
+                    burden my friends. My Heleno provided exactly what I
                     needed—a compassionate listener."
                   </p>
                   <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -82,7 +82,7 @@ export default function HowItsGoingSection() {
 
                 <div className="bg-gray-100 dark:bg-white/5 p-6 rounded-2xl transition-colors">
                   <p className="text-black dark:text-white mb-2">
-                    "As a Lynker, I've helped over 200 people navigate career
+                    "As a Heleno, I've helped over 200 people navigate career
                     transitions. It’s rewarding to turn my experience into
                     impact and income."
                   </p>
@@ -118,11 +118,11 @@ export default function HowItsGoingSection() {
                   {
                     icon: Users,
                     title: "Community is Everything",
-                    text: "Our Lynkers and users remain the heart of our mission."
+                    text: "Our Helenos and users remain the heart of our mission."
                   }
                 ].map((item, i) => (
                   <div key={i} className="text-center">
-                    <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg bg-gray-200 dark:bg-[#1F1F1F] transition-colors">
+                    <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg bg-transparent dark:bg-[#1F1F1F] transition-colors">
                       <item.icon className="w-8 h-8 text-black dark:text-white" />
                     </div>
                     <h5 className="mb-2 text-black dark:text-white transition-colors">
