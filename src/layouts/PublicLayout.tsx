@@ -1,8 +1,8 @@
 import { AlignLeft, X } from "lucide-react";
 import { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import Footer from "../Footer";
-import Logo from "../Logo";
+import Logo from "../components/Logo";
+import Footer from "../pages/public/Footer";
 
 const PublicLayout = () => {
   const [bar, setBar] = useState<boolean>(false);
@@ -72,11 +72,21 @@ const PublicLayout = () => {
         </div>
 
         <div className="flex items-center gap-4 mr-3">
-          <button className="text-lg font-medium hover:opacity-70 transition">
+          <button
+            className="text-lg font-medium hover:opacity-70 transition"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
             Log in
           </button>
 
-          <button className="bg-white text-black rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition">
+          <button
+            className="bg-white text-black rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition"
+            onClick={() => {
+              navigate("/join");
+            }}
+          >
             Get Started
           </button>
         </div>

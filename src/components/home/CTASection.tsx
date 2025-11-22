@@ -8,7 +8,7 @@ const CTASection = () => {
       py-16 px-5 sm:px-8 md:px-12 lg:px-20"
     >
       {/* bg-gradient-to-br from-[#050505] via-[#0C0C18] to-[#1A1A2E] */}
-      <div className="container mx-auto max-w-4xl text-center relative z-10">
+      <div className="coWntainer mx-auto max-w-4xl text-center relative z-10">
         <div
           className="inline-flex items-center gap-2 bg-[#161616]/90 px-5 py-2 rounded-full 
           border border-[#2A2A2A] shadow-lg shadow-black/40 backdrop-blur-md"

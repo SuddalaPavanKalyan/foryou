@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import { useEffect } from "react";
-import { useCardService } from "./CardService";
+import { useCardService } from "../../utils/CardService";
 
 const Card1 = () => (
   <div className="p-8 text-white">
