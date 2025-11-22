@@ -1,23 +1,34 @@
-import { createContext, type ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from "react";
 
 type Theme = "light" | "dark";
 
 interface ThemeContextType {
-  theme: Theme;
+  mode: Theme;
   toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [mode, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
+  useEffect(() => {
+    const root = document.documentElement;
+    root.className = mode === "dark" ? "dark" : "light";
+  }, [mode]);
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ mode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

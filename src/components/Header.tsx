@@ -4,16 +4,27 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
 
 const Header = () => {
-  const [bar, setBar] = useState<boolean>(false);
+  const [bar, setBar] = useState(false);
   const toggle = () => setBar((p) => !p);
   const navigate = useNavigate();
 
   return (
-    <div>
-      <header className="flex items-center justify-between px-1 py-4 bg-black text-white">
+    <>
+      <header
+        className="
+          flex items-center justify-between p-2
+          bg-white text-black
+          dark:bg-black dark:text-white
+          transition-colors duration-300
+        "
+      >
         <div className="flex items-center gap-3 md:hidden">
           <button
-            className="p-3 rounded-full hover:bg-white/5 active:scale-95 transition"
+            className="
+              p-3 rounded-full
+              hover:bg-black/10 dark:hover:bg-white/5
+              active:scale-95 transition
+            "
             onClick={toggle}
           >
             <AlignLeft size={26} />
@@ -24,12 +35,12 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center justify-between px-10 py-5 bg-black text-white gap-10">
+        <div className="hidden md:flex items-center justify-between px-10 py-5 gap-10">
           <div
             className="
-      font-extrabold text-2xl uppercase cursor-pointer tracking-[0.25em]
-      text-white transition-all duration-300"
-            role="button"
+              font-extrabold text-2xl uppercase cursor-pointer tracking-[0.25em]
+              transition-all duration-300
+            "
             onClick={() => navigate("/")}
           >
             HELENO
@@ -45,43 +56,48 @@ const Header = () => {
               ].map((item) => (
                 <li
                   key={item.label}
-                  className="text-base font-normal tracking-wide relative group cursor-pointer text-white/90"
+                  className="
+                    text-base font-medium tracking-wide relative group cursor-pointer
+                    text-black/80 dark:text-white/80
+                  "
                 >
                   <Link to={item.link} reloadDocument className="transition">
                     {item.label}
                   </Link>
 
-                  {/* Smooth underline hover */}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#7A0CF8] rounded-full transition-all duration-300 group-hover:w-full"></span>
+                  <span
+                    className="
+                      absolute left-0 -bottom-1 w-0 h-[2px]
+                      bg-[#7A0CF8] rounded-full
+                      transition-all duration-300 group-hover:w-full
+                    "
+                  />
                 </li>
               ))}
             </ul>
           </nav>
         </div>
 
-        {/* <span
-                    className="
-              absolute left-0 -bottom-1 h-[2px] w-0
-              bg-gradient-to-r from-[#2D0065] to-[#7A0CF8]
-              transition-all duration-300 group-hover:w-full
-            "
-                  /> */}
-
         <div className="flex items-center gap-4 mr-3">
           <button
-            className="text-lg font-medium hover:opacity-70 transition"
-            onClick={() => {
-              navigate("/login");
-            }}
+            className="
+              text-lg font-medium 
+              hover:opacity-70 transition
+              text-black dark:text-white
+            "
+            onClick={() => navigate("/login")}
           >
             Log in
           </button>
 
           <button
-            className="bg-white text-black rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition"
-            onClick={() => {
-              navigate("/join");
-            }}
+            className="
+              rounded-full px-5 py-2.5 text-lg font-semibold active:scale-95 transition
+              bg-black text-white
+              dark:bg-white dark:text-black
+              hover:bg-black/80 dark:hover:bg-gray-200
+            "
+            onClick={() => navigate("/join")}
           >
             Get Started
           </button>
@@ -89,15 +105,21 @@ const Header = () => {
       </header>
 
       <div
-        className={`md:hidden fixed top-0 left-0 h-full w-full bg-black text-white flex flex-col transform transition-transform duration-300 z-50 ${
-          bar ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`
+          md:hidden fixed top-0 left-0 h-full w-full flex flex-col z-50
+          transform transition-transform duration-300
+          ${bar ? "translate-x-0" : "-translate-x-full"}
+          bg-white text-black
+          dark:bg-black dark:text-white
+        `}
       >
         <header className="w-full flex items-center justify-between px-4 py-3">
-          <div className="w-16 p-1 active:scale-95 transition" />
-          <div className="text-[14px] font-bold uppercase tracking-wide px-5">
-            <p className="w-full px-5">Heleno</p>
-          </div>
+          <div className="w-16 p-1" />
+
+          <p className="text-[14px] font-bold uppercase tracking-wide px-5">
+            Heleno
+          </p>
+
           <button className="p-1 active:scale-95 transition" onClick={toggle}>
             <X size={50} />
           </button>
@@ -113,13 +135,9 @@ const Header = () => {
             ].map((item) => (
               <li
                 key={item.label}
-                className="text-xl tracking-wide hover:opacity-80 transition"
+                className="text-xl font-medium tracking-wide hover:opacity-80 transition"
               >
-                <Link
-                  to={item.link}
-                  reloadDocument
-                  className="hover:opacity-80 transition"
-                >
+                <Link to={item.link} reloadDocument className="transition">
                   {item.label}
                 </Link>
               </li>
@@ -129,20 +147,22 @@ const Header = () => {
 
         <footer className="px-5 py-6 flex flex-col items-center gap-4">
           <button
-            className="w-full py-5 text-center bg-white text-black text-lg rounded-full font-sm active:scale-95 transition"
-            onClick={() => {
-              navigate("/join");
-            }}
+            className="
+              w-full py-5 text-lg rounded-full active:scale-95 transition
+              bg-black text-white
+              dark:bg-white dark:text-black
+            "
+            onClick={() => navigate("/join")}
           >
             Get Started
           </button>
 
-          <div className="text-center text-[11px] text-white/60">
+          <div className="text-center text-[11px] text-black/60 dark:text-white/60">
             © 2025 Heleno • All rights reserved
           </div>
         </footer>
       </div>
-    </div>
+    </>
   );
 };
 

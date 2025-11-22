@@ -16,40 +16,64 @@ function FAQItem({
 }) {
   return (
     <motion.div
-      className="border border-white/10 rounded-2xl overflow-hidden bg-white/5"
       initial={false}
+      className="
+        rounded-2xl overflow-hidden transition-all
+
+        /* Light Mode */
+        bg-white border border-gray-200 
+        shadow-[0_2px_10px_rgba(0,0,0,0.05)]
+        hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]
+
+        /* Dark Mode */
+        dark:bg-[#0F0F0F] dark:border-gray-800
+        dark:shadow-[0_0_15px_rgba(255,255,255,0.03)]
+        dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.06)]
+      "
     >
+      {/* Button */}
       <button
         onClick={onClick}
-        className="w-full px-6 py-5 flex items-center justify-between text-left 
-        hover:bg-white/10 transition-colors"
+        className="
+          w-full px-6 py-5 flex items-center justify-between text-left
+          transition-colors
+
+          hover:bg-gray-100
+          dark:hover:bg-white/10
+        "
       >
-        <div className="flex items-center gap-4 flex-1">
-          <h5 className="text-white">{question}</h5>
-        </div>
+        <h5 className="text-gray-900 dark:text-white font-medium flex-1">
+          {question}
+        </h5>
 
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.25 }}
         >
           {isOpen ? (
-            <Minus className="w-6 h-6 text-white" />
+            <Minus className="w-6 h-6 text-gray-900 dark:text-white" />
           ) : (
-            <Plus className="w-6 h-6 text-white" />
+            <Plus className="w-6 h-6 text-gray-900 dark:text-white" />
           )}
         </motion.div>
       </button>
 
+      {/* Expandable Section */}
       <motion.div
         initial={false}
-        animate={{
-          height: isOpen ? "auto" : 0,
-          opacity: isOpen ? 1 : 0
-        }}
-        transition={{ duration: 0.3 }}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
         className="overflow-hidden"
       >
-        <div className="px-6 pb-5 pt-2 md:pl-20 text-gray-300">{answer}</div>
+        <div
+          className="
+            px-6 pb-5 pt-1 md:pl-20 
+            text-gray-600 dark:text-gray-300
+            leading-relaxed
+          "
+        >
+          {answer}
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -72,7 +96,7 @@ export default function FAQSection() {
     {
       question: "Are my personal details and payments secure?",
       answer:
-        "Yes. We use end-to-end encryption and bank-grade payment security. Your data is never shared with Lynkers."
+        "Yes. We use end-to-end encryption and bank-grade payment security. Your data is never shared with Helenos."
     },
     {
       question: "How are Helenos verified?",
@@ -102,12 +126,22 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-black">
+    <section
+      className="
+        py-24 px-6
+        bg-white text-black
+        dark:bg-black dark:text-white
+        transition-colors duration-300
+      "
+    >
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="mb-6 text-white">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">
+            <h2 className="mb-6 text-3xl sm:text-4xl font-semibold">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
               Find answers to common safety-related questions about using
               Heleno.
             </p>
@@ -116,7 +150,7 @@ export default function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <ScrollReveal key={index} delay={index * 0.05}>
+            <ScrollReveal delay={index * 0.05} key={index}>
               <FAQItem
                 question={faq.question}
                 answer={faq.answer}

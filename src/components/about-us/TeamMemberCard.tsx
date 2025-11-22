@@ -33,12 +33,15 @@ export default function TeamMemberCard({
       <div
         className="
           min-h-[550px] rounded-2xl overflow-hidden 
-          bg-[#0A0A0A] border border-white/10 
-          shadow-[0_0_20px_rgba(0,0,0,0.6)] 
-          hover:shadow-[0_0_35px_rgba(125,0,255,0.35)]
+          bg-white dark:bg-[#0A0A0A]
+          border border-gray-300 dark:border-white/10  
+          shadow-[0_0_15px_rgba(0,0,0,0.12)] 
+          dark:shadow-[0_0_20px_rgba(0,0,0,0.6)]
+          hover:shadow-[0_0_30px_rgba(125,0,255,0.25)]
           transition-all duration-300
         "
       >
+        {/* IMAGE */}
         <div className="relative overflow-hidden h-80">
           <motion.div
             className="
@@ -48,6 +51,7 @@ export default function TeamMemberCard({
               transition-opacity duration-300 z-10
             "
           />
+
           <img
             src={member.image}
             alt={member.name}
@@ -59,8 +63,11 @@ export default function TeamMemberCard({
           />
         </div>
 
+        {/* CONTENT */}
         <div className="p-6">
-          <h4 className="mb-1 text-white font-semibold">{member.name}</h4>
+          <h4 className="mb-1 text-black dark:text-white font-semibold transition-colors">
+            {member.name}
+          </h4>
 
           <div
             className="
@@ -72,51 +79,60 @@ export default function TeamMemberCard({
             {member.role}
           </div>
 
-          <p className="text-gray-400 text-sm mb-4">{member.bio}</p>
+          <p className="text-gray-700 dark:text-gray-400 text-sm mb-4 transition-colors">
+            {member.bio}
+          </p>
 
+          {/* Icons */}
           <div className="flex gap-3">
+            {/* LinkedIn */}
             {member.linkedin && (
               <a
                 href={member.linkedin}
                 className="
                   w-9 h-9 rounded-full 
-                  bg-white/10 border border-white/10
+                  bg-gray-200 dark:bg-white/10 
+                  border border-gray-300 dark:border-white/10
                   hover:bg-gradient-to-r hover:from-[#2D0065] hover:to-[#7A0CF8]
                   flex items-center justify-center
                   transition-all group/icon
                 "
               >
-                <Linkedin className="w-4 h-4 text-gray-300 group-hover/icon:text-white" />
+                <Linkedin className="w-4 h-4 text-gray-700 dark:text-gray-300 group-hover/icon:text-white" />
               </a>
             )}
 
+            {/* Twitter */}
             {member.twitter && (
               <a
                 href={member.twitter}
                 className="
                   w-9 h-9 rounded-full 
-                  bg-white/10 border border-white/10
+                  bg-gray-200 dark:bg-white/10 
+                  border border-gray-300 dark:border-white/10
                   hover:bg-gradient-to-r hover:from-[#2D0065] hover:to-[#7A0CF8]
                   flex items-center justify-center
                   transition-all group/icon
                 "
               >
-                <Twitter className="w-4 h-4 text-gray-300 group-hover/icon:text-white" />
+                <Twitter className="w-4 h-4 text-gray-700 dark:text-gray-300 group-hover/icon:text-white" />
               </a>
             )}
 
+            {/* Email */}
             {member.email && (
               <a
                 href={`mailto:${member.email}`}
                 className="
                   w-9 h-9 rounded-full 
-                  bg-white/10 border border-white/10
+                  bg-gray-200 dark:bg-white/10 
+                  border border-gray-300 dark:border-white/10
                   hover:bg-gradient-to-r hover:from-[#2D0065] hover:to-[#7A0CF8]
                   flex items-center justify-center
                   transition-all group/icon
                 "
               >
-                <Mail className="w-4 h-4 text-gray-300 group-hover/icon:text-white" />
+                <Mail className="w-4 h-4 text-gray-700 dark:text-gray-300 group-hover/icon:text-white" />
               </a>
             )}
           </div>
