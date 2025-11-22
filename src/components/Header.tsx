@@ -20,6 +20,7 @@ const Header = () => {
     <>
       <header
         className="
+          sticky top-0 z-50
           flex items-center justify-between p-2
           bg-white text-black
           dark:bg-black dark:text-white
