@@ -55,8 +55,7 @@ const SignIn = () => {
               
               bg-black text-white border border-black/10
               hover:bg-black/10
-              
-              dark:bg-white text-black dark:hover:bg-gray-200
+              dark:bg-white dark:text-black dark:hover:bg-gray-200
             "
           >
             <img
