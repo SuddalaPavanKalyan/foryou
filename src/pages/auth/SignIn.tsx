@@ -28,8 +28,7 @@ const SignIn = () => {
       <div
         className="
           w-full max-w-md flex flex-col items-center text-center
-          bg-white dark:bg-transparent
-          p-8 sm:p-10 
+          bg-white dark:bg-transparent 
           dark:shadow-none
           dark:border-transparent
           transition-all duration-300

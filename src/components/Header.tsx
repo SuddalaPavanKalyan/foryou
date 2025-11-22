@@ -1,12 +1,20 @@
 import { AlignLeft, X } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
 
 const Header = () => {
   const [bar, setBar] = useState(false);
   const toggle = () => setBar((p) => !p);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const navItems = [
+    { label: "Home", link: "/" },
+    { label: "Safety", link: "/trust-and-safety" },
+    { label: "Our Story", link: "/company/story" },
+    { label: "About Us", link: "/company/about" }
+  ];
 
   return (
     <>
@@ -18,6 +26,7 @@ const Header = () => {
           transition-colors duration-300
         "
       >
+        {/* ================= MOBILE LEFT LOGO + MENU ================= */}
         <div className="flex items-center gap-3 md:hidden">
           <button
             className="
@@ -35,6 +44,7 @@ const Header = () => {
           </div>
         </div>
 
+        {/* ================= DESKTOP NAV ================= */}
         <div className="hidden md:flex items-center justify-between px-10 py-5 gap-10">
           <div
             className="
@@ -48,36 +58,37 @@ const Header = () => {
 
           <nav>
             <ul className="flex items-center gap-8">
-              {[
-                { label: "Home", link: "/" },
-                { label: "Safety", link: "/trust-and-safety" },
-                { label: "Our Story", link: "/company/story" },
-                { label: "About Us", link: "/company/about" }
-              ].map((item) => (
-                <li
-                  key={item.label}
-                  className="
-                    text-base font-medium tracking-wide relative group cursor-pointer
-                    text-black/80 dark:text-white/80
-                  "
-                >
-                  <Link to={item.link} reloadDocument className="transition">
-                    {item.label}
-                  </Link>
-
-                  <span
+              {navItems.map((item) => {
+                const active = pathname === item.link;
+                return (
+                  <li
+                    key={item.label}
                     className="
-                      absolute left-0 -bottom-1 w-0 h-[2px]
-                      bg-[#7A0CF8] rounded-full
-                      transition-all duration-300 group-hover:w-full
+                      text-base font-medium tracking-wide relative group cursor-pointer
+                      text-black/80 dark:text-white/80
                     "
-                  />
-                </li>
-              ))}
+                  >
+                    <Link to={item.link} reloadDocument className="transition">
+                      {item.label}
+                    </Link>
+
+                    {/* ACTIVE OR HOVER UNDERLINE */}
+                    <span
+                      className={`
+                        absolute left-0 -bottom-1 h-[2px] rounded-full
+                        bg-[#7A0CF8] transition-all duration-300
+
+                        ${active ? "w-full" : "w-0 group-hover:w-full"}
+                      `}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
 
+        {/* ================= RIGHT BUTTONS ================= */}
         <div className="flex items-center gap-4 mr-3">
           <button
             className="
@@ -104,6 +115,7 @@ const Header = () => {
         </div>
       </header>
 
+      {/* ================= MOBILE NAV ================= */}
       <div
         className={`
           md:hidden fixed top-0 left-0 h-full w-full flex flex-col z-50
@@ -127,21 +139,27 @@ const Header = () => {
 
         <main className="flex-1 flex flex-col px-5 py-4">
           <ul className="space-y-4">
-            {[
-              { label: "Home", link: "/" },
-              { label: "Safety", link: "/trust-and-safety" },
-              { label: "Our Story", link: "/company/story" },
-              { label: "About Us", link: "/company/about" }
-            ].map((item) => (
-              <li
-                key={item.label}
-                className="text-xl font-medium tracking-wide hover:opacity-80 transition"
-              >
-                <Link to={item.link} reloadDocument className="transition">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const active = pathname === item.link;
+              return (
+                <li
+                  key={item.label}
+                  className={`
+                    text-xl font-medium tracking-wide transition
+                    ${active ? "text-[#7A0CF8]" : "hover:opacity-80"}
+                  `}
+                >
+                  <Link
+                    to={item.link}
+                    reloadDocument
+                    className="transition"
+                    onClick={toggle}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </main>
 
