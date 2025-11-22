@@ -5,7 +5,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen w-full grid grid-cols-1">
-      <div className="bg-black text-white flex flex-col items-center justify-center px-10 py-20 md:px-6 md:py-10">
+      <div className="bg-black text-white flex flex-col items-center justify-center px-8 py-20 md:px-6 md:py-10">
         <div
           className="absolute top-6 left-6 w-5 h-5 md:w-8 md:h-8 rounded-full cursor-pointer"
           role="button"

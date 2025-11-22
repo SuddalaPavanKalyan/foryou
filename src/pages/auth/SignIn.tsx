@@ -4,7 +4,7 @@ import Logo from "../../components/Logo";
 const SignIn = () => {
   const navigate = useNavigate();
   return (
-    <div className="md:min-h-screen w-full flex items-center justify-center bg-black text-white px-4">
+    <div className="min-h-screen w-full flex items-center justify-center bg-black text-white px-8 py-20">
       <div className="w-full max-w-md flex flex-col items-center text-center">
         <div
           className="mb-6 cursor-pointer"
